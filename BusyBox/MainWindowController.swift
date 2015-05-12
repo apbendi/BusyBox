@@ -10,15 +10,17 @@ class MainWindowController : NSWindowController {
     @IBOutlet weak var checkBox: NSButton!
 
     //lazy let initialSliderValue: Double // Why can't I?
-    var initialSliderValue = 0.0
-    var lastSliderValue = 0.0
+    private var initialSliderValue = 0.0
+    private var lastSliderStored = 0.0
 
     var showTickMarks: Bool {
         set {
             if newValue {
                 slider.numberOfTickMarks = 10
+                hideTicksRadio.state = NSOffState
             } else {
                 slider.numberOfTickMarks = 0
+                hideTicksRadio.state = NSOnState
             }
         }
         get {
@@ -26,20 +28,35 @@ class MainWindowController : NSWindowController {
         }
     }
 
-    var slideValue: Double {
+    var lastSliderValue: Double {
         set {
-            if newValue > lastSliderValue {
+            if newValue > lastSliderStored {
                 sliderStatusLabel.stringValue = "Slider Goes Up!"
-            } else if newValue < lastSliderValue {
+            } else if newValue < lastSliderStored {
                 sliderStatusLabel.stringValue = "Slider Goes Down!"
             } else {
                 sliderStatusLabel.stringValue = "Slider Stays the Same"
             }
 
-            lastSliderValue = newValue
+            lastSliderStored = newValue
         }
         get {
-            return slider.doubleValue
+            return lastSliderStored
+        }
+    }
+
+    var isChecked: Bool {
+        set {
+            if newValue {
+                checkBox.state = NSOnState
+                checkBox.title = "Uncheck Me"
+            } else {
+                checkBox.state = NSOffState
+                checkBox.title = "Check Me"
+            }
+        }
+        get {
+            return checkBox.state == NSOnState
         }
     }
 
@@ -57,15 +74,11 @@ class MainWindowController : NSWindowController {
     }
 
     @IBAction func boxDidCheck(sender: NSButton) {
-        if sender.state == NSOnState {
-            sender.title = "Uncheck me"
-        } else {
-            sender.title = "Check Me"
-        }
+        isChecked = (sender.state == NSOnState)
     }
 
     @IBAction func sliderDidUpdate(sender: NSSlider) {
-        slideValue = sender.doubleValue
+        lastSliderValue = sender.doubleValue
     }
 
     @IBAction func radioButtonDidPush(sender: NSButton) {
@@ -77,13 +90,20 @@ class MainWindowController : NSWindowController {
     }
 
     @IBAction func resetButtonDidPress(sender: NSButton) {
+        showTickMarks = false
+        isChecked = true
+
+        resetSliderAndStatus()
+        resetTextFields()
+    }
+
+    private func resetSliderAndStatus() {
         slider.doubleValue = initialSliderValue
-        slider.numberOfTickMarks = 0
         sliderStatusLabel.stringValue = ""
-        hideTicksRadio.state = NSOnState
+    }
+
+    private func resetTextFields() {
         secureTextField.stringValue = ""
         revealTextField.stringValue = ""
-        checkBox.state = NSOnState
-        checkBox.title = "Uncheck Me"
     }
 }
