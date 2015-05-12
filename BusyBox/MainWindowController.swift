@@ -13,6 +13,19 @@ class MainWindowController : NSWindowController {
     var initialSliderValue = 0.0
     var lastSliderValue = 0.0
 
+    var showTickMarks: Bool {
+        set {
+            if newValue {
+                slider.numberOfTickMarks = 10
+            } else {
+                slider.numberOfTickMarks = 0
+            }
+        }
+        get {
+            return slider.numberOfTickMarks == 0
+        }
+    }
+
     override var windowNibName: String? {
         return "MainWindowController"
     }
@@ -47,14 +60,7 @@ class MainWindowController : NSWindowController {
     }
 
     @IBAction func radioButtonDidPush(sender: NSButton) {
-        switch (sender.tag)  {
-        case 0:
-            slider.numberOfTickMarks = 10
-        case 1:
-            slider.numberOfTickMarks = 0
-        default:
-            println("Invalid Selection")
-        }
+        showTickMarks = (sender.tag == 0)
     }
 
     @IBAction func revealButtonDidPress(sender: NSButton) {
