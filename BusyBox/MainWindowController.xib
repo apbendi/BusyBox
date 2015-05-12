@@ -6,6 +6,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="BusyBox" customModuleProvider="target">
             <connections>
+                <outlet property="slider" destination="edz-6B-6MW" id="597-Ny-QMr"/>
+                <outlet property="sliderStatusLabel" destination="tDS-im-dgO" id="Okl-66-LJx"/>
                 <outlet property="window" destination="9wm-Mr-ykR" id="7c7-bo-oCa"/>
             </connections>
         </customObject>
@@ -30,6 +32,21 @@
                             <action selector="boxDidCheck:" target="-2" id="HYQ-GP-q52"/>
                         </connections>
                     </button>
+                    <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edz-6B-6MW">
+                        <rect key="frame" x="18" y="84" width="21" height="248"/>
+                        <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="I8h-JN-sbH"/>
+                        <connections>
+                            <action selector="sliderDidUpdate:" target="-2" id="Ric-r9-Wv1"/>
+                        </connections>
+                    </slider>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tDS-im-dgO">
+                        <rect key="frame" x="66" y="190" width="223" height="123"/>
+                        <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" title="Slider Goes" placeholderString="" id="1SX-nm-SLx">
+                            <font key="font" metaFont="system" size="36"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
             <point key="canvasLocation" x="471" y="347"/>
