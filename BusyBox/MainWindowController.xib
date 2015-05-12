@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="BusyBox" customModuleProvider="target">
             <connections>
+                <outlet property="checkBox" destination="Vi8-su-0kb" id="4Ul-Tr-Xix"/>
                 <outlet property="hideTicksRadio" destination="nir-EH-G5K" id="dGo-rJ-mLM"/>
                 <outlet property="revealTextField" destination="Flg-eJ-Nwh" id="UN9-Pi-70X"/>
                 <outlet property="secureTextField" destination="AfF-JD-P2a" id="3nL-BY-IXC"/>
@@ -89,6 +90,16 @@
                         </buttonCell>
                         <connections>
                             <action selector="revealButtonDidPress:" target="-2" id="DE8-Tg-oH3"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="knA-nU-1qS">
+                        <rect key="frame" x="14" y="13" width="132" height="32"/>
+                        <buttonCell key="cell" type="push" title="Reset Controls" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="J4e-am-DO9">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="resetButtonDidPress:" target="-2" id="ngI-Nb-aEj"/>
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Flg-eJ-Nwh">

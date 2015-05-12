@@ -7,7 +7,10 @@ class MainWindowController : NSWindowController {
     @IBOutlet weak var hideTicksRadio: NSButton!
     @IBOutlet weak var secureTextField: NSSecureTextField!
     @IBOutlet weak var revealTextField: NSTextField!
+    @IBOutlet weak var checkBox: NSButton!
 
+    //lazy let initialSliderValue: Double // Why can't I?
+    var initialSliderValue = 0.0
     var lastSliderValue = 0.0
 
     override var windowNibName: String? {
@@ -18,6 +21,7 @@ class MainWindowController : NSWindowController {
         super.windowDidLoad()
 
         lastSliderValue = slider.doubleValue
+        initialSliderValue = slider.doubleValue
         sliderStatusLabel.stringValue = ""
         hideTicksRadio.state = NSOnState
     }
@@ -55,5 +59,16 @@ class MainWindowController : NSWindowController {
 
     @IBAction func revealButtonDidPress(sender: NSButton) {
         revealTextField.stringValue = secureTextField.stringValue
+    }
+
+    @IBAction func resetButtonDidPress(sender: NSButton) {
+        slider.doubleValue = initialSliderValue
+        slider.numberOfTickMarks = 0
+        sliderStatusLabel.stringValue = ""
+        hideTicksRadio.state = NSOnState
+        secureTextField.stringValue = ""
+        revealTextField.stringValue = ""
+        checkBox.state = NSOnState
+        checkBox.title = "Uncheck Me"
     }
 }
