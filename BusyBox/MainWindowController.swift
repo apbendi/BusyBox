@@ -4,6 +4,7 @@ class MainWindowController : NSWindowController {
 
     @IBOutlet weak var sliderStatusLabel: NSTextField!
     @IBOutlet weak var slider: NSSlider!
+    @IBOutlet weak var hideTicksRadio: NSButton!
 
     var lastSliderValue = 0.0
 
@@ -16,6 +17,7 @@ class MainWindowController : NSWindowController {
 
         lastSliderValue = slider.doubleValue
         sliderStatusLabel.stringValue = ""
+        hideTicksRadio.state = NSOnState
     }
 
     @IBAction func boxDidCheck(sender: NSButton) {
@@ -38,4 +40,14 @@ class MainWindowController : NSWindowController {
         lastSliderValue = sender.doubleValue
     }
 
+    @IBAction func radioButtonDidPush(sender: NSButton) {
+        switch (sender.tag)  {
+        case 0:
+            slider.numberOfTickMarks = 10
+        case 1:
+            slider.numberOfTickMarks = 0
+        default:
+            println("Invalid Selection")
+        }
+    }
 }

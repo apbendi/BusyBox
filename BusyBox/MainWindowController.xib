@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="BusyBox" customModuleProvider="target">
             <connections>
+                <outlet property="hideTicksRadio" destination="nir-EH-G5K" id="dGo-rJ-mLM"/>
                 <outlet property="slider" destination="edz-6B-6MW" id="597-Ny-QMr"/>
                 <outlet property="sliderStatusLabel" destination="tDS-im-dgO" id="Okl-66-LJx"/>
                 <outlet property="window" destination="9wm-Mr-ykR" id="7c7-bo-oCa"/>
@@ -33,7 +34,7 @@
                         </connections>
                     </button>
                     <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edz-6B-6MW">
-                        <rect key="frame" x="18" y="84" width="21" height="248"/>
+                        <rect key="frame" x="18" y="84" width="20" height="248"/>
                         <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="I8h-JN-sbH"/>
                         <connections>
                             <action selector="sliderDidUpdate:" target="-2" id="Ric-r9-Wv1"/>
@@ -47,6 +48,26 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OR1-up-eqE">
+                        <rect key="frame" x="79" y="132" width="162" height="23"/>
+                        <buttonCell key="cell" type="radio" title="Show slider tick marks" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="hGU-MP-Plv">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="radioButtonDidPush:" target="-2" id="CJv-Oa-zzM"/>
+                        </connections>
+                    </button>
+                    <button fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="nir-EH-G5K">
+                        <rect key="frame" x="79" y="105" width="162" height="23"/>
+                        <buttonCell key="cell" type="radio" title="Hide slider tick marks" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="eQE-vf-eHU">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="radioButtonDidPush:" target="-2" id="6fb-2u-xLd"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <point key="canvasLocation" x="471" y="347"/>
