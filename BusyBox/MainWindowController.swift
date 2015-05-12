@@ -26,6 +26,23 @@ class MainWindowController : NSWindowController {
         }
     }
 
+    var slideValue: Double {
+        set {
+            if newValue > lastSliderValue {
+                sliderStatusLabel.stringValue = "Slider Goes Up!"
+            } else if newValue < lastSliderValue {
+                sliderStatusLabel.stringValue = "Slider Goes Down!"
+            } else {
+                sliderStatusLabel.stringValue = "Slider Stays the Same"
+            }
+
+            lastSliderValue = newValue
+        }
+        get {
+            return slider.doubleValue
+        }
+    }
+
     override var windowNibName: String? {
         return "MainWindowController"
     }
@@ -48,15 +65,7 @@ class MainWindowController : NSWindowController {
     }
 
     @IBAction func sliderDidUpdate(sender: NSSlider) {
-        if sender.doubleValue > lastSliderValue {
-            sliderStatusLabel.stringValue = "Slider Goes Up!"
-        } else if sender.doubleValue < lastSliderValue {
-            sliderStatusLabel.stringValue = "Slider Goes Down!"
-        } else {
-            sliderStatusLabel.stringValue = "Slider Stays the same!"
-        }
-
-        lastSliderValue = sender.doubleValue
+        slideValue = sender.doubleValue
     }
 
     @IBAction func radioButtonDidPush(sender: NSButton) {
