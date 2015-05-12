@@ -11,6 +11,8 @@
 		B41866F31B019CE700176D65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41866F21B019CE700176D65 /* Images.xcassets */; };
 		B41866F61B019CE700176D65 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B41866F41B019CE700176D65 /* MainMenu.xib */; };
 		B41867021B019CE700176D65 /* BusyBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41867011B019CE700176D65 /* BusyBoxTests.swift */; };
+		B418670C1B019D1E00176D65 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418670B1B019D1E00176D65 /* MainWindowController.swift */; };
+		B418670E1B019D7400176D65 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B418670D1B019D7400176D65 /* MainWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		B41866FB1B019CE700176D65 /* BusyBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusyBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41867001B019CE700176D65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B41867011B019CE700176D65 /* BusyBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyBoxTests.swift; sourceTree = "<group>"; };
+		B418670B1B019D1E00176D65 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		B418670D1B019D7400176D65 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +78,10 @@
 			isa = PBXGroup;
 			children = (
 				B41866F01B019CE700176D65 /* AppDelegate.swift */,
-				B41866F21B019CE700176D65 /* Images.xcassets */,
+				B418670B1B019D1E00176D65 /* MainWindowController.swift */,
 				B41866F41B019CE700176D65 /* MainMenu.xib */,
+				B418670D1B019D7400176D65 /* MainWindowController.xib */,
+				B41866F21B019CE700176D65 /* Images.xcassets */,
 				B41866EE1B019CE700176D65 /* Supporting Files */,
 			);
 			path = BusyBox;
@@ -187,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41866F31B019CE700176D65 /* Images.xcassets in Resources */,
+				B418670E1B019D7400176D65 /* MainWindowController.xib in Resources */,
 				B41866F61B019CE700176D65 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41866F11B019CE700176D65 /* AppDelegate.swift in Sources */,
+				B418670C1B019D1E00176D65 /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
