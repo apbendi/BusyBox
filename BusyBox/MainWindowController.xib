@@ -19,6 +19,18 @@
             <view key="contentView" id="87E-X0-zsY">
                 <rect key="frame" x="0.0" y="0.0" width="618" height="350"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vi8-su-0kb">
+                        <rect key="frame" x="445" y="314" width="100" height="18"/>
+                        <buttonCell key="cell" type="check" title="Uncheck Me" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="JDH-OJ-ilj">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="boxDidCheck:" target="-2" id="HYQ-GP-q52"/>
+                        </connections>
+                    </button>
+                </subviews>
             </view>
             <point key="canvasLocation" x="471" y="347"/>
         </window>
