@@ -7,6 +7,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="BusyBox" customModuleProvider="target">
             <connections>
                 <outlet property="hideTicksRadio" destination="nir-EH-G5K" id="dGo-rJ-mLM"/>
+                <outlet property="revealTextField" destination="Flg-eJ-Nwh" id="UN9-Pi-70X"/>
+                <outlet property="secureTextField" destination="AfF-JD-P2a" id="3nL-BY-IXC"/>
                 <outlet property="slider" destination="edz-6B-6MW" id="597-Ny-QMr"/>
                 <outlet property="sliderStatusLabel" destination="tDS-im-dgO" id="Okl-66-LJx"/>
                 <outlet property="window" destination="9wm-Mr-ykR" id="7c7-bo-oCa"/>
@@ -68,6 +70,35 @@
                             <action selector="radioButtonDidPush:" target="-2" id="6fb-2u-xLd"/>
                         </connections>
                     </button>
+                    <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AfF-JD-P2a">
+                        <rect key="frame" x="356" y="189" width="242" height="96"/>
+                        <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Type in a secret message" drawsBackground="YES" usesSingleLineMode="YES" id="joj-v3-1MP">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <allowedInputSourceLocales>
+                                <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                            </allowedInputSourceLocales>
+                        </secureTextFieldCell>
+                    </secureTextField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LqB-3X-bra">
+                        <rect key="frame" x="374" y="153" width="206" height="32"/>
+                        <buttonCell key="cell" type="push" title="Reveal the secret message" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ld2-Lk-Kaz">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="revealButtonDidPress:" target="-2" id="DE8-Tg-oH3"/>
+                        </connections>
+                    </button>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Flg-eJ-Nwh">
+                        <rect key="frame" x="356" y="58" width="236" height="94"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="TyQ-Cb-A2P">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
             <point key="canvasLocation" x="471" y="347"/>

@@ -5,6 +5,8 @@ class MainWindowController : NSWindowController {
     @IBOutlet weak var sliderStatusLabel: NSTextField!
     @IBOutlet weak var slider: NSSlider!
     @IBOutlet weak var hideTicksRadio: NSButton!
+    @IBOutlet weak var secureTextField: NSSecureTextField!
+    @IBOutlet weak var revealTextField: NSTextField!
 
     var lastSliderValue = 0.0
 
@@ -49,5 +51,9 @@ class MainWindowController : NSWindowController {
         default:
             println("Invalid Selection")
         }
+    }
+
+    @IBAction func revealButtonDidPress(sender: NSButton) {
+        revealTextField.stringValue = secureTextField.stringValue
     }
 }
